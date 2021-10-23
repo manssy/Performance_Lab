@@ -7,10 +7,11 @@ import java.util.Scanner;
 
 public class Task4 {
     public static void main(String[] msi) throws IOException {
+        ArrayList<Integer> list = new ArrayList<Integer>();
         for (String name : msi) {
-            ArrayList<Integer> list = new ArrayList<Integer>();
             parser(list, name);
             System.out.println(task4(list));
+            list.clear();
         }
     }
 
