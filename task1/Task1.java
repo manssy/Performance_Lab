@@ -10,7 +10,7 @@ public class Task1 {
         } catch (Exception msg) {
             System.out.println(msg.getMessage());
         }
-        if (n > 0 || m > 0)
+        if (n > 0 && m > 0)
             way(n, m);
     }
 
