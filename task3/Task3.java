@@ -13,7 +13,7 @@ public class Task3 {
 
     public static void main(String[] msi) throws IOException, ParseException {
         //create(compare(tests("tests.json"), values("values.json")));
-        create(compare(tests(msi[0]), values(msi[1])));
+        create(compare(tests(msi[0].trim()), values(msi[1].trim())));
     }
 
     public static void create(JSONArray jarr) {
