@@ -1,4 +1,4 @@
-package Task3;
+package task3;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -11,10 +11,10 @@ import org.json.simple.parser.ParseException;
 
 public class Task3 {
 
-    public static void main(String[] args) throws IOException, ParseException {
-        create(compare(tests("tests.json"), values("values.json")));
-
-   }
+    public static void main(String[] msi) throws IOException, ParseException {
+        //create(compare(tests("tests.json"), values("values.json")));
+        create(compare(tests(msi[0]), values(msi[1])));
+    }
 
     public static void create(JSONArray jarr) {
         try {
@@ -31,21 +31,12 @@ public class Task3 {
         int x = -1;
         int y;
         while (++x < tests.size()) {
-            if (((JSONObject) tests.get(x)).get("values") != null) // JSONObject tx = ((JSONObject)tests.get(x));
+            if (((JSONObject) tests.get(x)).get("values") != null)
                 compare((JSONArray) ((JSONObject) tests.get(x)).get("values"), value);
             y = -1;
             while (++y < value.size()) {
-                // JSONObject vy = ((JSONObject) value.get(y));
-                if (((JSONObject) tests.get(x)).get("id").equals(((JSONObject) value.get(y)).get("id"))) {
+                if (((JSONObject) tests.get(x)).get("id").equals(((JSONObject) value.get(y)).get("id")))
                     ((JSONObject) tests.get(x)).put("value", ((JSONObject) value.get(y)).get("value"));
-                }
-                // System.out.print(((JSONObject) tests.get(x)).get("id") + " ");
-                // System.out.print(((JSONObject) tests.get(x)).get("value") + "\n");
-                // System.out.print(x + " $$$$$ " + ((JSONObject) tests.get(x)).get("id") + "
-                // ");
-                // System.out.println(((JSONObject) value.get(y)).get("id") + " " + y);
-                // System.out.println(((JSONObject) tests.get(x)).get("id").equals(((JSONObject)
-                // value.get(y)).get("id")));
             }
         }
         return tests;
@@ -64,7 +55,6 @@ public class Task3 {
     public static JSONArray tests(String name) throws IOException, ParseException {
         JSONObject jsonObject = ((JSONObject) new JSONParser().parse(new FileReader(name)));
         JSONArray jsonarr = ((JSONArray) jsonObject.get("tests"));
-        // print(jsonarr);
         return jsonarr;
     }
 
@@ -73,7 +63,6 @@ public class Task3 {
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
         JSONArray jsonarr = ((JSONArray) jsonObject.get("values"));
-        // print(jsonarr);
         return jsonarr;
     }
 
