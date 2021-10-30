@@ -12,13 +12,13 @@ import org.json.simple.parser.ParseException;
 public class Task3 {
 
     public static void main(String[] msi) throws IOException, ParseException {
-        //create(compare(tests("tests.json"), values("values.json")));
-        create(compare(tests(msi[0].trim()), values(msi[1].trim())));
+        create(compare(tests("src\\task3\\tests.json"), values("src\\task3\\values.json")));
+        //create(compare(tests(msi[0].trim()), values(msi[1].trim())));
     }
 
     public static void create(JSONArray jarr) {
         try {
-            try (FileWriter file = new FileWriter("report.json")) {
+            try (FileWriter file = new FileWriter("src\\task3\\report.json")) {
                 file.write(jarr.toJSONString());
                 file.flush();
             }
