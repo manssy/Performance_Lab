@@ -1,4 +1,0 @@
-shaydullin
-java
-"lib/**/*.jar"
-"c:\\Users\\Mansy\\Downloads\\json-simple-1.1.jar"
